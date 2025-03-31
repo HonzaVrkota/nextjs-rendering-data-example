@@ -19,7 +19,12 @@ const ServerComponentUsers = async () => {
   const [users] = await Promise.all([usersPromise]);
   return (
     <div>
-      Random id: {crypto.randomUUID().split("-")[0]}
+      <p>
+        <span>Time of fetching: {new Date().toLocaleString()}</span>
+        <br />
+        <span className="font-bold">Random id:</span>{" "}
+        {crypto.randomUUID().split("-")[0]}
+      </p>
       <div className="mb-6">
         <h4 className="text-md font-medium mb-2">Users</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -13,7 +13,12 @@ const ServerComponentTodos = async () => {
   const [todos] = await Promise.all([todosPromise]);
   return (
     <div>
-      Random id: {crypto.randomUUID().split("-")[0]}
+      <p>
+        <span>Time of fetching: {new Date().toLocaleString()}</span>
+        <br />
+        <span className="font-bold">Random id:</span>{" "}
+        {crypto.randomUUID().split("-")[0]}
+      </p>
       <div>
         <h4 className="text-md font-medium mb-2">User Todos</h4>
         {todos.map((todo) => (

@@ -5,7 +5,7 @@ export async function POST(request: NextRequest) {
   try {
     // Get the secret from the request body
     const body = await request.json();
-    const { secret } = body;
+    const { secret, path } = body;
 
     // Check for the secret to confirm this is a valid request
     if (secret !== process.env.REVALIDATION_SECRET) {
@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Revalidate the ISR page
-    revalidatePath("/isr");
+    revalidatePath(path ? path : "/isr");
 
     return NextResponse.json(
       { revalidated: true, now: Date.now() },
