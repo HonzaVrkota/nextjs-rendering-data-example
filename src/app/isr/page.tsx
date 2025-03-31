@@ -1,3 +1,4 @@
+import RevalidateButton from "@/components/RevalidateButton";
 import StrategyLayout from "@/components/StrategyLayout";
 import TodoItem from "@/components/Todo";
 import { Todo } from "@/types";
@@ -47,6 +48,10 @@ export default async function ISRPage() {
           <br />
           In production, the old cached version would be shown first, then
           updated in the background after revalidation time passes.
+        </div>
+
+        <div className="mb-6">
+          <RevalidateButton />
         </div>
 
         {todos.length === 0 ? (
