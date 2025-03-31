@@ -37,8 +37,8 @@ export default function Home() {
             Static Site Generation (SSG)
           </h2>
           <p>
-            Pages are generated at build time with data baked in. Content
-            doesn't change after deployment unless rebuilt.
+            Pages are generated at build time with data baked in. Content doesnt
+            change after deployment unless rebuilt.
           </p>
         </div>
 
