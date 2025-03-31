@@ -10,7 +10,10 @@ interface User {
 
 const ServerComponentUsers = async () => {
   const usersPromise = fetch(
-    "https://jsonplaceholder.typicode.com/users?_limit=2"
+    "https://jsonplaceholder.typicode.com/users?_limit=2",
+    {
+      cache: "no-store",
+    }
   ).then((res) => res.json() as Promise<User[]>);
 
   await new Promise((resolve) => setTimeout(resolve, 7000));
